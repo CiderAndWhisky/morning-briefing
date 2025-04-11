@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# Run PHP Code Style Fixer
+echo "Running PHP Code Style Fixer..."
+vendor/bin/php-cs-fixer fix src
+if [ $? -ne 0 ]; then
+    echo "PHP Code Style Fixer failed. Please fix the issues manually."
+    exit 1
+fi
+
+# Run PHPStan
+echo "Running PHPStan..."
+vendor/bin/phpstan analyse
+if [ $? -ne 0 ]; then
+    echo "PHPStan found issues. Please fix them before committing."
+    exit 1
+fi
+
+# Run Psalm
+echo "Running Psalm..."
+vendor/bin/psalm
+if [ $? -ne 0 ]; then
+    echo "Psalm found issues. Please fix them before committing."
+    exit 1
+fi
+
+# Run Deptrac
+echo "Running Deptrac..."
+vendor/bin/deptrac analyse
+if [ $? -ne 0 ]; then
+    echo "Deptrac found architectural violations. Please fix them before committing."
+    exit 1
+fi
+
+# Run Behat tests
+echo "Running Behat tests..."
+vendor/bin/behat
+if [ $? -ne 0 ]; then
+    echo "Behat tests failed. Please fix them before committing."
+    exit 1
+fi
+
+echo "All checks passed. You can commit your changes."
+exit 0 

@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+  "php.validate.enable": true,
+  "php.suggest.basic": false,
+  "php.executablePath": "/usr/bin/php",
+  "php.version": "8.2",
+  "files.associations": {
+    "*.php": "php"
+  },
+  "emmet.includeLanguages": {
+    "php": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.showSuggestionsAsSnippets": true
+} 

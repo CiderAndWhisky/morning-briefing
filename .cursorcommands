@@ -1,0 +1,15 @@
+# Morning Briefing Project Commands
+
+# Development Commands
+dev:setup = "composer install && cp .env.example .env && php bin/console app:setup"
+dev:test = "php bin/phpunit"
+dev:lint = "php bin/phpcs src tests"
+dev:fix = "php bin/phpcbf src tests"
+dev:format = "php bin/php-cs-fixer fix src tests"
+
+# Application Commands
+app:news:fetch = "php bin/console app:news:fetch"
+app:news:filter = "php bin/console app:news:filter"
+app:news:group = "php bin/console app:news:group"
+app:news:briefing = "php bin/console app:news:briefing"
+

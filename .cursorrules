@@ -1,0 +1,90 @@
+# Morning Briefing Project Rules
+
+# BDD Rules
+- Write features before implementing any code
+- Align features with stakeholders before implementation
+- Implement features sentence by sentence
+- Keep features focused on business value
+- Use Given-When-Then format for scenarios
+- Use domain language in features
+- Keep scenarios independent and atomic
+- Test one behavior per scenario
+- Use background for common setup
+- Use examples for data variations
+
+# Implementation Rules
+- Implement one sentence at a time
+- Run tests after each sentence implementation
+- Fix failing tests before moving to next sentence
+- Keep implementation simple and focused
+- Refactor only after all tests pass
+- Use dependency injection for all dependencies
+- Use interfaces for all external services
+- Use value objects for domain concepts
+- Use repositories for data access
+- Use DTOs for data transfer between layers
+
+# Test Structure Rules
+- Place features in Business/Modulename/test/behavioural/Featurename.feature
+- Place contexts in Business/Modulename/test/behavioural/context/ContextName.php
+- Place module behat.yaml in Business/Modulename/test/behavioural/behat.yaml
+- Include all module behat.yamls in root behat.yaml
+- Keep tests close to the code they test
+- Use descriptive test names
+- Document test setup and teardown
+- Clean up test data after each test
+- Use test doubles for external dependencies
+- Use fixtures for test data
+
+# Architecture Rules
+- Follow Onion Architecture principles
+- Keep controllers thin, move business logic to use cases
+- Use dependency injection for all dependencies
+- Use interfaces for all external services
+- Use value objects for domain concepts
+- Use repositories for data access
+- Use DTOs for data transfer between layers
+- Separate domain logic from infrastructure concerns
+- Keep domain models pure and free of infrastructure dependencies
+- Use command/query separation where appropriate
+
+# Testing Rules
+- Write unit tests for all business logic
+- Write integration tests for external services
+- Use PHPUnit for testing
+- Aim for at least 80% code coverage
+- Use data providers for testing multiple scenarios
+- Mock external dependencies in unit tests
+- Use fixtures for integration tests
+- Write tests before implementing features (TDD approach)
+- Test edge cases and error conditions
+
+# Documentation Rules
+- Document all public methods and classes with PHPDoc
+- Include @param, @return, and @throws annotations
+- Document complex business logic with inline comments
+- Keep README.md up to date with project setup and usage instructions
+- Document architectural decisions in ADR (Architecture Decision Records)
+- Document API endpoints with OpenAPI/Swagger
+- Include examples in documentation
+
+# Git Rules
+- Use feature branches for new features
+- Use bugfix branches for bug fixes
+- Use hotfix branches for urgent fixes
+- Write descriptive commit messages
+- Squash commits before merging to main branch
+- Follow semantic versioning for releases
+- Keep pull requests focused on a single feature or fix
+
+# Pre-commit Rules
+- Run code style fixer before commit
+- Run behavioural tests before commit
+- Fail commit if code style fixes are needed
+- Fail commit if tests fail
+- Provide clear error messages for failed checks
+- Keep pre-commit hook simple and fast
+- Document pre-commit requirements
+- Update pre-commit hook as needed
+- Test pre-commit hook regularly
+- Keep pre-commit hook in version control

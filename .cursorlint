@@ -1,0 +1,82 @@
+# PHP Linting Rules
+
+# PSR-12 Coding Standards
+- Use PSR-12 coding standards
+- Use 2 spaces for indentation
+- Use LF for line endings
+- Use UTF-8 for file encoding
+- Use Unix-style line endings (LF)
+- Use Unix-style file permissions
+- Use braces for all control structures
+- Use spaces around operators
+- Use spaces after commas
+- Use spaces before and after parentheses in control structures
+
+# PHP Code Style
+- Use type hints for all method parameters and return types
+- Use strict_types declaration at the top of each PHP file
+- Use constructor property promotion where applicable
+- Use readonly properties where applicable
+- Use match expressions instead of switch statements where applicable
+- Use named arguments for functions with many parameters
+- Use early returns to reduce nesting
+- Use immutable objects where possible
+- Use dependency injection for all dependencies
+- Use interfaces for all external services
+
+# Naming Conventions
+- Use PascalCase for class names
+- Use camelCase for method and variable names
+- Use UPPER_CASE for constants
+- Use snake_case for configuration keys
+- Use PascalCase for file names (e.g., AzureOpenAIClient.php)
+- Use descriptive names that reflect purpose
+- Avoid abbreviations unless widely understood
+- Use verb-noun format for method names
+- Use noun format for class names
+- Use adjective format for interfaces
+
+# Code Organization
+- One class per file
+- One namespace per file
+- One use statement per line
+- Group use statements by type (classes, functions, constants)
+- Sort use statements alphabetically
+- Keep methods small and focused
+- Limit method parameters to 3 or fewer
+- Use data transfer objects for complex parameters
+- Group related methods together
+- Place public methods before protected/private methods
+
+# Documentation
+- Document all public methods and classes with PHPDoc
+- Include @param, @return, and @throws annotations
+- Document complex business logic with inline comments
+- Use complete sentences in documentation
+- Document exceptions that may be thrown
+- Document side effects of methods
+- Document assumptions made by methods
+- Document any non-obvious behavior
+
+# Error Handling
+- Use exceptions for error handling
+- Use specific exception types
+- Include meaningful error messages
+- Log exceptions with appropriate context
+- Don't catch exceptions unless you can handle them
+- Don't swallow exceptions without logging
+- Use custom exception classes for domain-specific errors
+- Include stack traces in development environments
+- Sanitize error messages in production
+
+# Security
+- Validate all user input
+- Sanitize all output
+- Use prepared statements for database queries
+- Use CSRF protection for forms
+- Use secure password hashing
+- Use HTTPS for all external requests
+- Validate file uploads
+- Implement rate limiting for APIs
+- Use secure session handling
+- Follow the principle of least privilege 

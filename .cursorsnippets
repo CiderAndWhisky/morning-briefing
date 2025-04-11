@@ -1,0 +1,266 @@
+# Morning Briefing Project Snippets
+
+# PHP Class Snippet
+snippet phpclass
+---
+<?php
+
+declare(strict_types=1);
+
+namespace ${1:App\\${2:Namespace}};
+
+/**
+ * ${3:Class description}
+ */
+class ${4:ClassName}
+{
+    /**
+     * Constructor
+     */
+    public function __construct(
+        ${5:private readonly Type $property}
+    ) {
+    }
+
+    /**
+     * ${6:Method description}
+     *
+     * @param Type $param
+     * @return Type
+     * @throws Exception
+     */
+    public function ${7:methodName}(Type $param): Type
+    {
+        ${8:// Method implementation}
+    }
+}
+---
+
+# PHP Interface Snippet
+snippet phpinterface
+---
+<?php
+
+declare(strict_types=1);
+
+namespace ${1:App\\${2:Namespace}};
+
+/**
+ * ${3:Interface description}
+ */
+interface ${4:InterfaceName}
+{
+    /**
+     * ${5:Method description}
+     *
+     * @param Type $param
+     * @return Type
+     * @throws Exception
+     */
+    public function ${6:methodName}(Type $param): Type;
+}
+---
+
+# PHP Trait Snippet
+snippet phptrait
+---
+<?php
+
+declare(strict_types=1);
+
+namespace ${1:App\\${2:Namespace}};
+
+/**
+ * ${3:Trait description}
+ */
+trait ${4:TraitName}
+{
+    /**
+     * ${5:Method description}
+     *
+     * @param Type $param
+     * @return Type
+     * @throws Exception
+     */
+    private function ${6:methodName}(Type $param): Type
+    {
+        ${7:// Method implementation}
+    }
+}
+---
+
+# PHP Use Case Snippet
+snippet phpusecase
+---
+<?php
+
+declare(strict_types=1);
+
+namespace App\\Business\\UseCase;
+
+use App\\Domain\\Exception\\${1:Exception};
+use App\\Domain\\Repository\\${2:RepositoryInterface};
+use App\\Domain\\Service\\${3:ServiceInterface};
+
+/**
+ * ${4:Use case description}
+ */
+class ${5:UseCaseName}
+{
+    /**
+     * Constructor
+     */
+    public function __construct(
+        private readonly ${2:RepositoryInterface} $repository,
+        private readonly ${3:ServiceInterface} $service
+    ) {
+    }
+
+    /**
+     * ${6:Method description}
+     *
+     * @param Type $input
+     * @return Type
+     * @throws ${1:Exception}
+     */
+    public function execute(Type $input): Type
+    {
+        ${7:// Use case implementation}
+    }
+}
+---
+
+# PHP Repository Snippet
+snippet phprepository
+---
+<?php
+
+declare(strict_types=1);
+
+namespace App\\Infrastructure\\Repository;
+
+use App\\Domain\\Entity\\${1:Entity};
+use App\\Domain\\Repository\\${1:Entity}RepositoryInterface;
+use App\\Domain\\ValueObject\\${2:ValueObject};
+
+/**
+ * ${3:Repository description}
+ */
+class ${4:RepositoryName} implements ${1:Entity}RepositoryInterface
+{
+    /**
+     * Constructor
+     */
+    public function __construct(
+        private readonly \PDO $connection
+    ) {
+    }
+
+    /**
+     * ${5:Method description}
+     *
+     * @param ${2:ValueObject} $id
+     * @return ${1:Entity}
+     * @throws \App\\Domain\\Exception\\NotFoundException
+     */
+    public function findById(${2:ValueObject} $id): ${1:Entity}
+    {
+        ${6:// Repository implementation}
+    }
+}
+---
+
+# PHP Service Snippet
+snippet phpservice
+---
+<?php
+
+declare(strict_types=1);
+
+namespace App\\Infrastructure\\Service;
+
+use App\\Domain\\Service\\${1:ServiceInterface};
+
+/**
+ * ${2:Service description}
+ */
+class ${3:ServiceName} implements ${1:ServiceInterface}
+{
+    /**
+     * Constructor
+     */
+    public function __construct(
+        private readonly \App\\Infrastructure\\Client\\${4:ClientInterface} $client
+    ) {
+    }
+
+    /**
+     * ${5:Method description}
+     *
+     * @param Type $input
+     * @return Type
+     * @throws \App\\Domain\\Exception\\ServiceException
+     */
+    public function ${6:methodName}(Type $input): Type
+    {
+        ${7:// Service implementation}
+    }
+}
+---
+
+# PHP Command Snippet
+snippet phpcommand
+---
+<?php
+
+declare(strict_types=1);
+
+namespace App\\API\\Command;
+
+use App\\Business\\UseCase\\${1:UseCase};
+use Symfony\\Component\\Console\\Command\\Command;
+use Symfony\\Component\\Console\\Input\\InputInterface;
+use Symfony\\Component\\Console\\Output\\OutputInterface;
+use Symfony\\Component\\Console\\Style\\SymfonyStyle;
+
+/**
+ * ${2:Command description}
+ */
+class ${3:CommandName} extends Command
+{
+    /**
+     * Constructor
+     */
+    public function __construct(
+        private readonly ${1:UseCase} $useCase
+    ) {
+        parent::__construct();
+    }
+
+    /**
+     * Configure command
+     */
+    protected function configure(): void
+    {
+        $this
+            ->setName('app:${4:command-name}')
+            ->setDescription('${2:Command description}');
+    }
+
+    /**
+     * Execute command
+     */
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $io = new SymfonyStyle($input, $output);
+
+        try {
+            ${5:// Command implementation}
+            return Command::SUCCESS;
+        } catch (\Exception $e) {
+            $io->error($e->getMessage());
+            return Command::FAILURE;
+        }
+    }
+}
+--- 

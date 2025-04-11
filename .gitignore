@@ -1,0 +1,22 @@
+# Dependencies
+vendor/
+composer.lock
+
+# Environment
+.env
+*.local
+
+# IDE
+.vscode/
+.idea/
+
+# Cache and logs
+/var/
+/log/
+*.log
+.php_cs.cache
+.php-cs-fixer.cache
+.deptrac.cache
+
+# System
+.DS_Store

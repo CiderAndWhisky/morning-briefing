@@ -1,0 +1,40 @@
+# PHP Formatting Rules
+
+# Indentation
+indent_style = space
+indent_size = 2
+
+# Line Endings
+end_of_line = lf
+
+# Character Encoding
+charset = utf-8
+
+# Trim Trailing Whitespace
+trim_trailing_whitespace = true
+
+# Insert Final Newline
+insert_final_newline = true
+
+# PHP Specific
+php_version = 8.2
+php_cs_fixer = true
+php_cs_fixer_rules = "@PSR12"
+
+# File Associations
+[*.php]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Composer Files
+[composer.json]
+indent_style = space
+indent_size = 2
+
+# Markdown Files
+[*.md]
+trim_trailing_whitespace = false 

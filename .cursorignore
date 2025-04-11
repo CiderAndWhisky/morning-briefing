@@ -1,0 +1,29 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build files
+/build/
+/dist/
+
+# Cache files
+/cache/
+*.cache
+
+# Log files
+/logs/
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db 

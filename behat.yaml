@@ -1,0 +1,19 @@
+default:
+  suites:
+    news_gathering:
+      paths:
+        - '%paths.base%/src/Business/NewsGathering/test/behavioural'
+      contexts:
+        - App\Business\NewsGathering\Test\Behavioural\Context\GatherNewsContext
+  extensions:
+    Behat\Symfony2Extension:
+      kernel:
+        class: App\Kernel
+        bootstrap: test
+    Behat\MinkExtension:
+      base_url: http://localhost:8000
+      sessions:
+        default:
+          symfony2: ~
+  autoload:
+    '': '%paths.base%/src' 

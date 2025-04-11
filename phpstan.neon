@@ -1,0 +1,11 @@
+parameters:
+    level: max
+    paths:
+        - src
+    excludePaths:
+        - **/test/**
+    checkMissingIterableValueType: true
+    checkGenericClassInNonGenericObjectType: true
+
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon 

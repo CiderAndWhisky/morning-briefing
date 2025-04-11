@@ -1,0 +1,29 @@
+deptrac:
+  paths:
+    - ./src
+  exclude_files:
+    - '#.*test.*#'
+  layers:
+    - name: Api
+      collectors:
+        - type: directory
+          regex: src/Api/.*
+    - name: Business
+      collectors:
+        - type: directory
+          regex: src/Business/.*
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          regex: src/Infrastructure/.*
+  ruleset:
+    Api:
+      - Business
+      - Infrastructure
+    Business:
+      - Infrastructure
+    Infrastructure: ~
+  skip_violations:
+    Api\Tests\.*: ~
+    Business\Tests\.*: ~
+    Infrastructure\Tests\.*: ~ 
