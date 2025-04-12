@@ -1,0 +1,33 @@
+name: RTVE Noticias
+url: https://www.rtve.es/noticias
+language: es
+political_orientation: neutral
+type: public_service
+feed_url: https://www.rtve.es/rss/temas_noticias.xml
+scrape_method: rss
+topics:
+  - politics
+  - economy
+  - science
+  - culture
+  - international
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels: [country, international]
+  regions:
+    - level: country
+      code: ES
+      name: España
+    - level: international
+      code: INT
+      name: Internacional
+metadata:
+  founded: 1956
+  update_frequency: very_high
+  paywall: none
+  owner: Government of Spain
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified active with 24/7 news updates" 

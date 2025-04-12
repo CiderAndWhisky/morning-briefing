@@ -1,0 +1,32 @@
+name: ABC
+url: https://www.abc.es
+language: es
+political_orientation: conservative
+type: newspaper
+feed_url: https://www.abc.es/rss/feeds/abcPortada.xml
+scrape_method: rss
+topics:
+  - politics
+  - economy
+  - society
+  - culture
+quality_metrics:
+  fact_checking: medium
+  source_citation: medium
+  editorial_standards: medium
+coverage:
+  levels: [country, international]
+  regions:
+    - level: country
+      code: ES
+      name: España
+    - level: international
+      code: INT
+      name: Internacional
+metadata:
+  founded: 1903
+  update_frequency: high
+  paywall: partial
+  owner: Vocento
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified via ABC's RSS directory, homepage updates ~30min" 

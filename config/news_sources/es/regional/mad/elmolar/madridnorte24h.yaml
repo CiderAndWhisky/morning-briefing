@@ -1,0 +1,33 @@
+name: Madrid Norte 24 Horas
+url: https://www.madridnorte24horas.com
+language: es
+political_orientation: neutral
+type: newspaper
+feed_url: https://www.madridnorte24horas.com/rss/el-molar
+scrape_method: rss
+topics:
+  - local_news
+  - town_council
+  - events
+  - public_safety
+  - infrastructure
+quality_metrics:
+  fact_checking: medium
+  source_citation: medium
+  editorial_standards: medium
+coverage:
+  levels: [city]
+  regions:
+    - level: city
+      code: ELM
+      name: El Molar
+      metadata:
+        zip_code: "28710"
+        region: Sierra Norte
+metadata:
+  founded: null
+  update_frequency: low
+  paywall: none
+  owner: Independent
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified for El Molar local news coverage" 

@@ -1,0 +1,27 @@
+name: Der Spiegel
+url: https://www.spiegel.de
+language: de
+political_orientation: liberal
+type: magazine
+feed_url: https://www.spiegel.de/schlagzeilen/index.rss
+scrape_method: rss
+topics:
+  - politics
+  - economy
+  - international
+  - national
+  - technology
+  - culture
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels: [country, international]
+  regions:
+    - level: country
+      code: DE
+      name: Germany
+    - level: international
+      code: INT
+      name: International 

@@ -1,0 +1,33 @@
+name: Ayuntamiento de Madrid - Notas de Prensa
+url: https://www.madrid.es
+language: es
+political_orientation: neutral
+type: public_service
+feed_url: https://www.madrid.es/portales/munimadrid/medios/rss.html
+scrape_method: rss
+topics:
+  - city_government
+  - public_services
+  - local_policy
+  - community_events
+  - infrastructure
+quality_metrics:
+  fact_checking: medium
+  source_citation: medium
+  editorial_standards: medium
+coverage:
+  levels: [city, district]
+  regions:
+    - level: city
+      code: MAD-CITY
+      name: Madrid
+    - level: district
+      code: MAD-DISTRICTS
+      name: Distritos de Madrid
+metadata:
+  founded: null
+  update_frequency: medium
+  paywall: none
+  owner: Ayuntamiento de Madrid
+  verified_date: "2025-04-11"
+  verification_note: "Official city press release RSS feed verified active" 

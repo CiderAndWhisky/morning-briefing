@@ -1,0 +1,26 @@
+name: TZ München
+url: https://www.tz.de
+language: de
+political_orientation: neutral
+type: newspaper
+feed_url: https://www.tz.de/rssfeed.xml
+scrape_method: rss
+topics:
+  - local
+  - sports
+  - events
+  - crime
+  - traffic
+quality_metrics:
+  fact_checking: medium
+  source_citation: medium
+  editorial_standards: medium
+coverage:
+  levels: [city, district]
+  regions:
+    - level: city
+      code: MUC
+      name: Munich
+    - level: district
+      code: MUC-DISTRICTS
+      name: Munich Districts 

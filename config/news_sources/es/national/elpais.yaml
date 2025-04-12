@@ -1,0 +1,33 @@
+name: El País
+url: https://elpais.com
+language: es
+political_orientation: progressive
+type: newspaper
+feed_url: https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/ultimas-noticias/portada
+scrape_method: rss
+topics:
+  - politics
+  - economy
+  - culture
+  - technology
+  - international
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels: [country, international]
+  regions:
+    - level: country
+      code: ES
+      name: España
+    - level: international
+      code: INT
+      name: Internacional
+metadata:
+  founded: 1976
+  update_frequency: very_high
+  paywall: partial
+  owner: PRISA
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified active and delivering latest news" 

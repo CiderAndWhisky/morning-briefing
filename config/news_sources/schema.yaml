@@ -1,0 +1,142 @@
+# News Sources Configuration Schema
+
+# Root level configuration
+default_rescrape_interval:
+  type: integer
+  description: Default interval in seconds between re-scraping attempts
+  default: 1800
+  minimum: 300
+
+# Source configuration
+sources:
+  type: map
+  description: Map of news sources, keyed by unique identifier
+  entry:
+    name:
+      type: string
+      description: Display name of the source
+      required: true
+    
+    url:
+      type: string
+      description: Main URL of the source
+      required: true
+      format: url
+    
+    language:
+      type: string
+      description: Primary language (ISO 639-1)
+      required: true
+      enum: [de, en, fr, es, it]
+    
+    political_orientation:
+      type: string
+      description: Political leaning of the source
+      required: true
+      enum: [progressive, conservative, liberal, populist, neutral]
+    
+    type:
+      type: string
+      description: Type of news source
+      required: true
+      enum: [newspaper, magazine, public_service, blog, agency]
+    
+    feed_url:
+      type: string
+      description: URL for RSS/Atom feed or API endpoint
+      required: true
+      format: url
+    
+    scrape_method:
+      type: string
+      description: Method used to scrape articles
+      required: true
+      enum: [rss, api, html]
+    
+    topics:
+      type: array
+      description: List of topics covered by this source
+      required: true
+      items:
+        type: string
+    
+    quality_metrics:
+      type: map
+      description: Quality assessment metrics
+      required: true
+      properties:
+        fact_checking:
+          type: string
+          enum: [low, medium, high]
+        source_citation:
+          type: string
+          enum: [low, medium, high]
+        editorial_standards:
+          type: string
+          enum: [low, medium, high]
+    
+    coverage:
+      type: map
+      description: Geographic coverage information
+      required: true
+      properties:
+        levels:
+          type: array
+          description: Coverage levels from specific to general
+          required: true
+          items:
+            type: string
+            enum: [city, district, state, country, international]
+        regions:
+          type: array
+          description: Specific regions covered
+          required: true
+          items:
+            type: map
+            properties:
+              level:
+                type: string
+                enum: [city, district, state, country, international]
+              code:
+                type: string
+                description: Region code
+              name:
+                type: string
+                description: Human-readable region name
+              metadata:
+                type: map
+                required: false
+                description: Additional region-specific information
+    
+    metadata:
+      type: map
+      description: Additional source metadata
+      required: true
+      properties:
+        founded:
+          type: integer
+          description: Year the source was founded
+          required: false
+        update_frequency:
+          type: string
+          enum: [very_high, high, medium, low]
+          description: How often the source updates its content
+          required: true
+        paywall:
+          type: string
+          enum: [none, partial, full]
+          description: Access restrictions
+          required: true
+        owner:
+          type: string
+          description: Organization that owns the source
+          required: false
+        verified_date:
+          type: string
+          format: date
+          description: When the source and feed were last verified
+          required: true
+        verification_note:
+          type: string
+          description: Details about the verification process
+          required: true 

@@ -1,0 +1,26 @@
+name: Frankfurter Allgemeine Zeitung
+url: https://www.faz.net
+language: de
+political_orientation: conservative
+type: newspaper
+feed_url: https://www.faz.net/rss/aktuell
+scrape_method: rss
+topics:
+  - politics
+  - economy
+  - finance
+  - culture
+  - feuilleton
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels: [country, international]
+  regions:
+    - level: country
+      code: DE
+      name: Germany
+    - level: international
+      code: INT
+      name: International 

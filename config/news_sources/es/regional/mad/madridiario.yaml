@@ -1,0 +1,36 @@
+name: Madridiario
+url: https://www.madridiario.es
+language: es
+political_orientation: neutral
+type: newspaper
+feed_url: https://www.madridiario.es/rss/ultimasNoticias/
+scrape_method: rss
+topics:
+  - local_politics
+  - transport
+  - education
+  - innovation
+  - culture
+quality_metrics:
+  fact_checking: medium
+  source_citation: medium
+  editorial_standards: medium
+coverage:
+  levels: [city, district, state]
+  regions:
+    - level: state
+      code: MAD
+      name: Comunidad de Madrid
+    - level: city
+      code: MAD-CITY
+      name: Madrid
+    - level: district
+      code: MAD-DISTRICTS
+      name: Distritos de Madrid
+metadata:
+  founded: 2000
+  update_frequency: high
+  paywall: none
+  owner: Independent
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified active with daily local updates" 

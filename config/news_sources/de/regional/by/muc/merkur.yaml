@@ -1,0 +1,25 @@
+name: Merkur
+url: https://www.merkur.de
+language: de
+political_orientation: neutral
+type: newspaper
+feed_url: https://www.merkur.de/rssfeed.xml
+scrape_method: rss
+topics:
+  - local
+  - state
+  - sports
+  - events
+quality_metrics:
+  fact_checking: medium
+  source_citation: medium
+  editorial_standards: medium
+coverage:
+  levels: [city, state]
+  regions:
+    - level: city
+      code: MUC
+      name: Munich
+    - level: state
+      code: BY
+      name: Bavaria 

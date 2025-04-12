@@ -1,0 +1,30 @@
+name: Europa Press Madrid
+url: https://www.europapress.es/madrid
+language: es
+political_orientation: neutral
+type: agency
+feed_url: https://www.europapress.es/rss/rss.aspx?ch=291
+scrape_method: rss
+topics:
+  - regional_politics
+  - local_economy
+  - society
+  - culture
+  - incidents
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels: [state]
+  regions:
+    - level: state
+      code: MAD
+      name: Comunidad de Madrid
+metadata:
+  founded: 1953
+  update_frequency: very_high
+  paywall: none
+  owner: Europa Press
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified via Europa Press OPML, channel 291 for Madrid" 

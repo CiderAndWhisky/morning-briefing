@@ -1,0 +1,33 @@
+name: elDiario.es
+url: https://www.eldiario.es
+language: es
+political_orientation: progressive
+type: newspaper
+feed_url: https://www.eldiario.es/rss/
+scrape_method: rss
+topics:
+  - politics
+  - social_issues
+  - economy
+  - technology
+  - science
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels: [country, international]
+  regions:
+    - level: country
+      code: ES
+      name: España
+    - level: international
+      code: INT
+      name: Internacional
+metadata:
+  founded: 2012
+  update_frequency: high
+  paywall: none
+  owner: Independent Journalist-run
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified, site confirms progressive orientation" 

@@ -1,0 +1,33 @@
+name: El Mundo
+url: https://www.elmundo.es
+language: es
+political_orientation: conservative
+type: newspaper
+feed_url: https://www.elmundo.es/rss/elmundo_portada.xml
+scrape_method: rss
+topics:
+  - politics
+  - economy
+  - investigative
+  - technology
+  - international
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels: [country, international]
+  regions:
+    - level: country
+      code: ES
+      name: España
+    - level: international
+      code: INT
+      name: Internacional
+metadata:
+  founded: 1989
+  update_frequency: high
+  paywall: partial
+  owner: Unidad Editorial
+  verified_date: "2025-04-11"
+  verification_note: "RSS feed verified delivering current headlines" 
