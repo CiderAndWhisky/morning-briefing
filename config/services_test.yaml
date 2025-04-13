@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Infrastructure\Config\FileConfigService:
+        arguments:
+            $baseConfigDir: '%kernel.project_dir%/tests/config'
+
+    Business\ArticleDownload\test\behavioural\context\NewsSourceImportContext:
+        public: true
+        arguments:
+            $importService: '@Business\ArticleDownload\Domain\Service\NewsSourceImportService'
+            $repository: '@Business\ArticleDownload\Domain\Repository\NewsSourceRepository'
+            $configService: '@Infrastructure\Config\FileConfigService' 

@@ -18,4 +18,20 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
         exclude:
-            - '../src/Controller/**/test/**' 
+            - '../src/Controller/**/test/**'
+
+    Infrastructure\Persistence\Config\DatabaseConfig:
+        arguments:
+            $host: '%env(DB_HOST)%'
+            $port: '%env(int:DB_PORT)%'
+            $name: '%env(DB_NAME)%'
+            $user: '%env(DB_USER)%'
+            $password: '%env(DB_PASSWORD)%'
+
+    Infrastructure\Config\FileConfigService:
+        arguments:
+            $baseConfigDir: '%kernel.project_dir%/config'
+
+    Infrastructure\Persistence\Factory\DatabaseConnectionFactory: ~
+    Infrastructure\Persistence\Repository\PostgresNewsSourceRepository: ~
+    Business\ArticleDownload\Domain\Service\NewsSourceImportService: ~ 

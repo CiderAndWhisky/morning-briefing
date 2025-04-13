@@ -83,8 +83,8 @@
 - Fail commit if code style fixes are needed
 - Fail commit if tests fail
 - Provide clear error messages for failed checks
-- Keep pre-commit hook simple and fast
+- Keep pre-commit script simple and fast
 - Document pre-commit requirements
-- Update pre-commit hook as needed
-- Test pre-commit hook regularly
-- Keep pre-commit hook in version control
+- Update pre-commit script as needed
+- Test pre-commit script regularly
+- Keep pre-commit script in version control

@@ -86,3 +86,21 @@ php bin/phpcbf src tests
 ## License
 
 This project is proprietary
+
+# Architecture Rules
+- Follow Onion Architecture principles
+- Keep controllers thin, move business logic to use cases
+- Use dependency injection for all dependencies
+- Use interfaces for all external services
+- Use value objects for domain concepts
+- Use repositories for data access
+- Use DTOs for data transfer between layers
+- Separate domain logic from infrastructure concerns
+- Keep domain models pure and free of infrastructure dependencies
+- Use command/query separation where appropriate
+- Keep Business layer free from Infrastructure dependencies
+  - Entities belong in Infrastructure/Persistence
+  - Business layer should use its own domain models
+  - Domain models should be built from entities but structured for business needs
+  - Use repositories to transform between entities and domain models
+  - No direct use of ORM annotations in Business layer
