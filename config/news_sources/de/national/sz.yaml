@@ -1,1 +1,35 @@
- 
+name: Süddeutsche Zeitung
+url: https://www.sueddeutsche.de
+language: de
+political_orientation: liberal
+type: newspaper
+feed_url: https://rss.sueddeutsche.de/rss/Topthemen
+scrape_method: rss
+topics:
+  - politics
+  - business
+  - culture
+  - sports
+  - technology
+quality_metrics:
+  fact_checking: high
+  source_citation: high
+  editorial_standards: high
+coverage:
+  levels:
+    - country
+    - international
+  regions:
+    - level: country
+      code: DE
+      name: Germany
+    - level: international
+      code: EU
+      name: European Union
+metadata:
+  founded: 1945
+  update_frequency: very_high
+  paywall: partial
+  owner: Süddeutsche Zeitung GmbH
+  verified_date: 2024-03-20
+  verification_note: RSS feed verified and working, partial paywall confirmed 
