@@ -12,15 +12,7 @@ services:
             - '../src/Kernel.php'
             - '../src/**/test/**'
 
-    # controllers are imported separately to make sure services can be injected
-    # as action arguments even if you don't extend any base controller class
-    App\Controller\:
-        resource: '../src/Controller'
-        tags: ['controller.service_arguments']
-        exclude:
-            - '../src/Controller/**/test/**'
-
-    Infrastructure\Persistence\Config\DatabaseConfig:
+    App\Infrastructure\Persistence\Config\DatabaseConfig:
         arguments:
             $host: '%env(DB_HOST)%'
             $port: '%env(int:DB_PORT)%'
@@ -28,10 +20,10 @@ services:
             $user: '%env(DB_USER)%'
             $password: '%env(DB_PASSWORD)%'
 
-    Infrastructure\Config\FileConfigService:
+    App\Infrastructure\Config\FileConfigService:
         arguments:
-            $baseConfigDir: '%kernel.project_dir%/config'
+            $configDir: '%kernel.project_dir%/config'
 
-    Infrastructure\Persistence\Factory\DatabaseConnectionFactory: ~
-    Infrastructure\Persistence\Repository\PostgresNewsSourceRepository: ~
-    Business\ArticleDownload\Domain\Service\NewsSourceImportService: ~ 
+    App\Infrastructure\Persistence\Factory\DatabaseConnectionFactory: ~
+    App\Infrastructure\Persistence\Repository\PostgresNewsSourceRepository: ~
+    App\Business\ArticleDownload\Domain\Service\NewsSourceImportService: ~ 

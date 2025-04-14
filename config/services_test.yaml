@@ -2,14 +2,35 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
+        public: true
 
-    Infrastructure\Config\FileConfigService:
+    App\:
+        resource: '../src/*'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    App\Infrastructure\Config\FileConfigService:
         arguments:
-            $baseConfigDir: '%kernel.project_dir%/tests/config'
+            $configDir: '%kernel.project_dir%/tests/config'
 
-    Business\ArticleDownload\test\behavioural\context\NewsSourceImportContext:
+    App\Business\ArticleDownload\test\behavioural\context\NewsSourceImportContext:
         public: true
         arguments:
-            $importService: '@Business\ArticleDownload\Domain\Service\NewsSourceImportService'
-            $repository: '@Business\ArticleDownload\Domain\Repository\NewsSourceRepository'
-            $configService: '@Infrastructure\Config\FileConfigService' 
+            $importService: '@App\Business\ArticleDownload\Domain\Service\NewsSourceImportService'
+            $repository: '@App\Business\ArticleDownload\Domain\Repository\NewsSourceRepository'
+            $configService: '@App\Infrastructure\Config\FileConfigService'
+
+    App\Business\ArticleDownload\Domain\Service\ArticleCollectionService:
+        public: true
+
+    App\Business\ArticleDownload\test\behavioural\context\TestDatabaseHelper:
+        public: true
+        arguments:
+            $pdo: '@database_connection'
+
+    App\Business\ArticleDownload\test\behavioural\context\TestFileHelper:
+        public: true
+        arguments:
+            $configService: '@App\Infrastructure\Config\FileConfigService' 

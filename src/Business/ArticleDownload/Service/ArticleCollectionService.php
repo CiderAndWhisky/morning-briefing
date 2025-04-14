@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Business\ArticleDownload\Application;
+namespace App\Business\ArticleDownload\Service;
 
 /**
  * @psalm-suppress UnusedClass

@@ -2,52 +2,35 @@
 
 declare(strict_types=1);
 
-namespace Business\ArticleDownload\test\behavioural\context;
+namespace App\Business\ArticleDownload\test\behavioural\context;
+
+use App\Infrastructure\Config\FileConfigService;
 
 class TestFileHelper
 {
-    private const CACHE_DIR = __DIR__.'/cache';
-
-    public static function ensureTestConfigDir(): void
-    {
-        if (!file_exists(self::CACHE_DIR)) {
-            mkdir(self::CACHE_DIR, 0777, true);
-        }
+    public function __construct(
+        private readonly FileConfigService $configService,
+    ) {
     }
 
-    public static function createTestYaml(string $path, string $content): void
+    public function setupTestFiles(): void
     {
-        $fullPath = self::CACHE_DIR.'/'.$path;
-        $dir = dirname($fullPath);
-        if (!file_exists($dir)) {
-            mkdir($dir, 0777, true);
-        }
-        file_put_contents($fullPath, $content);
+        $this->configService->removeDirectory('news_sources');
+        $this->configService->ensureDirectoryExists('news_sources');
     }
 
-    public static function cleanupTestFiles(): void
+    public function cleanupTestFiles(): void
     {
-        if (file_exists(self::CACHE_DIR)) {
-            self::removeDirectory(self::CACHE_DIR);
-        }
+        $this->configService->removeDirectory('news_sources');
     }
 
-    private static function removeDirectory(string $dir): void
+    public function writeTestFile(string $path, string $content): void
     {
-        if (!file_exists($dir)) {
-            return;
-        }
-
-        $files = array_diff(scandir($dir), ['.', '..']);
-        foreach ($files as $file) {
-            $path = $dir.'/'.$file;
-            is_dir($path) ? self::removeDirectory($path) : unlink($path);
-        }
-        rmdir($dir);
+        $this->configService->writeConfigFile('news_sources/' . $path, $content);
     }
 
-    public static function getTestConfigDir(): string
+    public function readTestFile(string $path): string
     {
-        return self::CACHE_DIR;
+        return $this->configService->readConfigFile('news_sources/' . $path);
     }
 }

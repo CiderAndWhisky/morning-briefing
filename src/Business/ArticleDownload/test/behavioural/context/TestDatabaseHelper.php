@@ -2,32 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Business\ArticleDownload\test\behavioural\context;
+namespace App\Business\ArticleDownload\test\behavioural\context;
 
-use Infrastructure\Persistence\DatabaseHelper;
-use PHPUnit\Framework\Assert;
+use PDO;
 
 class TestDatabaseHelper
 {
-    public static function createTables(): void
-    {
-        DatabaseHelper::createTables();
+    public function __construct(
+        private readonly PDO $pdo,
+    ) {
     }
 
-    public static function dropTables(): void
+    public function truncateTables(): void
     {
-        DatabaseHelper::dropTables();
+        $this->pdo->exec('TRUNCATE TABLE news_sources_meta CASCADE');
+        $this->pdo->exec('TRUNCATE TABLE news_sources CASCADE');
     }
 
-    public static function truncateTables(): void
+    public function getPdo(): PDO
     {
-        DatabaseHelper::truncateTables();
-    }
-
-    public static function assertTableIsEmpty(string $table): void
-    {
-        $pdo = DatabaseHelper::getConnection();
-        $stmt = $pdo->query("SELECT COUNT(*) FROM $table");
-        Assert::assertEquals(0, $stmt->fetchColumn(), "$table table should be empty");
+        return $this->pdo;
     }
 }

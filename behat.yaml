@@ -1,19 +1,18 @@
 default:
   suites:
-    news_gathering:
+
+    article_download:
       paths:
-        - '%paths.base%/src/Business/NewsGathering/test/behavioural'
+        - '%paths.base%/src/Business/ArticleDownload/test/behavioural'
       contexts:
-        - App\Business\NewsGathering\Test\Behavioural\Context\GatherNewsContext
+        - App\Business\ArticleDownload\test\behavioural\context\NewsSourceImportContext
+        - App\Business\ArticleDownload\test\behavioural\context\ArticleCollectionContext
   extensions:
-    Behat\Symfony2Extension:
+    FriendsOfBehat\SymfonyExtension:
+      bootstrap: 'config/bootstrap.php'
       kernel:
         class: App\Kernel
-        bootstrap: test
-    Behat\MinkExtension:
-      base_url: http://localhost:8000
-      sessions:
-        default:
-          symfony2: ~
+        environment: test
+        debug: true
   autoload:
     '': '%paths.base%/src' 
